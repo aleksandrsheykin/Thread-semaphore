@@ -18,6 +18,10 @@ public class Kvadrator extends Thread {
     public void run() {
         try {
             Result = K*K;
+            MySemaphore.b = Result;
+            if (MySemaphore.getResolution()) {
+                Consumer.met(0, Result, 0);
+            }
             wait();
         } catch (InterruptedException e) {
             e.printStackTrace();

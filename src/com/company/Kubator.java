@@ -18,6 +18,10 @@ public class Kubator extends Thread {
     public void run() {
         try {
             Result = K*K*K;
+            MySemaphore.a = Result;
+            if (MySemaphore.getResolution()) {
+                Consumer.met(Result, 0, 0);
+            }
 
             wait();
         } catch (InterruptedException e) {

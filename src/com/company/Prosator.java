@@ -18,6 +18,10 @@ public class Prosator extends Thread {
     public void run() {
         try {
             Result = K;
+            MySemaphore.c = Result;
+            if (MySemaphore.getResolution()) {
+                Consumer.met(0, 0, Result);
+            }
             wait();
         } catch (InterruptedException e) {
             e.printStackTrace();

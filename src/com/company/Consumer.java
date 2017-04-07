@@ -5,7 +5,7 @@ package com.company;
  */
 public class Consumer {
 
-    public int met(int a, int b, int c) {
-        return a+b+c;
+    public static void met(int a, int b, int c) {
+        System.out.println(a+b+c);
     }
 }
