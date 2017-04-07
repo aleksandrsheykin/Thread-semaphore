@@ -16,22 +16,8 @@ public class Kubator extends Thread {
 
     @Override
     public void run() {
-        synchronized(this) {
-            try {
-                Result = K * K * K;
-                MySemaphore.a = Result;
-                boolean fl = true;
-                while(fl) {
-                    if (MySemaphore.getResolution()) {
-                        Consumer.met(Result, 0, 0);
-                        fl = false;
-                        //sleep(10);
-                    }
-                    wait();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        Result = K * K * K;
+        MySemaphore.a = Result;
+        Consumer.met(Result, 0, 0, "Kubator");
     }
 }

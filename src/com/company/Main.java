@@ -5,9 +5,9 @@ public class Main {
     private static Kubator kubator;
     private static Kvadrator kvadrator;
     private static Prosator prosator;
-    private static int[] arrA = new int[] {1,2,4,5,1,2,4,5,1,2,4,5};
-    private static int[] arrB = new int[] {3,7,4,1,2,4,5,1,2,4,5};
-    private static int[] arrC = new int[] {5,6,4,9,3,65,1,2,4,5,1,2,4,5};
+    private static int[] arrA = new int[] {1,2,4};
+    private static int[] arrB = new int[] {3,7,4,1,2,4,5};
+    private static int[] arrC = new int[] {5,6,4,9,3,65,1,2,4,5,1,2,4,5,2,4,5,1,2,4,5};
 
     public static void main(String[] args) {
         //mySemaphore = new MySemaphore();
