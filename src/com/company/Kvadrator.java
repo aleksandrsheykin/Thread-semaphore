@@ -16,15 +16,21 @@ public class Kvadrator extends Thread {
 
     @Override
     public void run() {
-        try {
-            Result = K*K;
-            MySemaphore.b = Result;
-            if (MySemaphore.getResolution()) {
-                Consumer.met(0, Result, 0);
+        synchronized(this) {
+            try {
+                Result = K * K;
+                MySemaphore.b = Result;
+                boolean fl = true;
+                while(fl) {
+                    if (MySemaphore.getResolution()) {
+                        Consumer.met(0, Result, 0);
+                        fl = false;
+                    }
+                    wait();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

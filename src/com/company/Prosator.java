@@ -16,15 +16,21 @@ public class Prosator extends Thread {
 
     @Override
     public void run() {
-        try {
-            Result = K;
-            MySemaphore.c = Result;
-            if (MySemaphore.getResolution()) {
-                Consumer.met(0, 0, Result);
+        synchronized(this) {
+            try {
+                Result = K;
+                MySemaphore.c = Result;
+                boolean fl = true;
+                while(fl) {
+                    if (MySemaphore.getResolution()) {
+                        Consumer.met(0, 0, Result);
+                        fl = false;
+                    }
+                    wait();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
