@@ -7,9 +7,10 @@ public class MySemaphore {
     static int a, b, c = 0;
 
     public static boolean getResolution() {
-        if (a!=0 && b!=0 && c!=0) {
-            return true;
+        if (a==0 || b==0 || c==0) {
+            System.out.println("getResolution a="+a+" b="+b+" c="+c);
+            return false;
         }
-        return false;
+        return true;
     }
 }

@@ -1,7 +1,7 @@
 package com.company;
 
 public class Main {
-    static MySemaphore mySemaphore ;
+    //static MySemaphore mySemaphore ;
     private static Kubator kubator;
     private static Kvadrator kvadrator;
     private static Prosator prosator;
@@ -10,7 +10,7 @@ public class Main {
     private static int[] arrC = new int[] {5,6,4,9,3,65};
 
     public static void main(String[] args) {
-        mySemaphore = new MySemaphore();
+        //mySemaphore = new MySemaphore();
 
         for(int i:arrA)
             kubator = new Kubator(i);

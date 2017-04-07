@@ -6,6 +6,6 @@ package com.company;
 public class Consumer {
 
     public static void met(int a, int b, int c) {
-        System.out.println(a+b+c);
+        System.out.println(a+b+c + " | a="+a+" b="+b+" c="+c);
     }
 }
